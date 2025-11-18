@@ -1,0 +1,33 @@
+{
+  "name": "nodejs-complete-guide",
+  "version": "1.0.0",
+  "description": "Node complete Guide Course",
+  "homepage": "https://github.com/vLcGomes/NODE-COMPLETE-GUIDE#readme",
+  "bugs": {
+    "url": "https://github.com/vLcGomes/NODE-COMPLETE-GUIDE/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vLcGomes/NODE-COMPLETE-GUIDE.git"
+  },
+  "license": "ISC",
+  "author": "Vinicius Gomes",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.2",
+    "mysql2": "^3.15.3",
+    "pug": "^3.0.3",
+    "sequelize": "^6.37.7"
+  }
+}
