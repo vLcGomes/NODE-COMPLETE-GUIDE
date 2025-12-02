@@ -1,3 +1,4 @@
+const { where } = require('sequelize')
 const Product = require('../models/product')
 
 exports.getAddProducts = (req, res, next) => {
@@ -17,7 +18,7 @@ exports.postAddProducts = (req, res, next) => {
     title: title,
     price: price,
     description: description,
-    imageUrl: imageUrl
+    imageUrl: imageUrl,
   })
     .then(result => {
       console.log('Product Added on Database')
@@ -35,8 +36,8 @@ exports.getEditProducts = (req, res, next) => {
   }
 
   const prodId = req.params.productId
-  Product.findByPk(prodId).then(product => {
-
+  Product.findByPk(prodId)
+    .then(product => {
     if (!product) {
       return res.redirect('/')
     }
@@ -76,15 +77,17 @@ exports.postEditProduct = (req, res, next) => {
 }
 
 exports.getProducts = (req, res, next) => {
-  Product.findAll().then(products => {
-    res.render('admin/products', {
-      prods: products,
-      docTitle: 'Shop',
-      path: '/admin/products'
+  Product.findAll()
+    .then(products => {
+      res.render('admin/products', {
+        prods: products,
+        docTitle: 'Shop',
+        path: '/admin/products'
+      })
     })
-  }).catch(err => {
-    console.log(err)
-  })
+    .catch(err => {
+      console.log(err)
+    })
 }
 
 exports.postDeleteProduct = (req, res, next) => {
