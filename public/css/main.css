@@ -197,6 +197,17 @@ form {
   color: white;
 }
 
+.btn.danger {
+  color: red;
+  border-color: red;
+}
+
+.btn.danger:hover,
+.btn.danger:active {
+  background: red;
+  color: white;
+}
+
 .image {
   height: 20rem;
 }
